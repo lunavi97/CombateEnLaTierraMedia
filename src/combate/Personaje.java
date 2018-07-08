@@ -2,14 +2,40 @@ package combate;
 
 public abstract class Personaje {
 	
-	int fuerza;
-	int vida;
+    private final int VIDAINICIAL = 100;
+	protected int fuerza;
+	protected int vida;
+	
+	public Personaje() {
+	    vida = VIDAINICIAL;
+	}
 	
 	public int salud() {
 		return vida;
 	}
 	
-	public abstract void atacar(Personaje otro);
+	public boolean estaVivo() {
+	    return vida > 0;
+	}
 	
-	public abstract void descansar();
+	public void atacar(Personaje otro) {
+	    if (!estaVivo())
+	        return;
+	    vivo_atacar(otro);
+	}
+	public abstract void vivo_atacar(Personaje otro);
+	
+	public void descansar() {
+	    if (!estaVivo())
+	        return;
+	    vivo_descansar();
+	}
+	public abstract void vivo_descansar();
+	
+	public void sufrirAtaque(int ataqueRecibido) {
+	    if (!estaVivo())
+            return;
+	    vivo_sufrirAtaque(ataqueRecibido);
+	}
+	public abstract void vivo_sufrirAtaque(int ataqueRecibido);
 }
