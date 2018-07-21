@@ -25,7 +25,7 @@ public class OrcoTests {
         Personaje enano = new Enano();
 
         Assert.assertEquals(100, orco.salud());
-        for(int i=0; i<6; i++) {
+        for(int i = 0; i < 6; i++) {
             enano.atacar(orco);
         }
         Assert.assertEquals(79, orco.salud());
