@@ -59,6 +59,7 @@ public class EnanoTests {
         Personaje enano = new Enano();
         Personaje elfo = new Elfo();
 
+        Assert.assertEquals(100, enano.salud());
         for (int i = 0; i < 6; i++) {
             elfo.atacar(enano);
         }
