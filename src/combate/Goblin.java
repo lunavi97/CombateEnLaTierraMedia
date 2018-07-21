@@ -2,16 +2,19 @@ package combate;
 
 public class Goblin extends Personaje {
 
-	@Override
-	public void atacar(Personaje otro) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void vivo_atacar(Personaje otro) {
+        
+    }
 
-	@Override
-	public void descansar() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void vivo_descansar() {
+        
+    }
+
+    @Override
+    public void vivo_sufrirAtaque(int ataqueRecibido) {
+        
+    }
 
 }
