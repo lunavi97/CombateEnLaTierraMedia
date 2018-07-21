@@ -64,8 +64,6 @@ public class HumanoTests {
         humano.descansar();
         humano.atacar(elfo);
         Assert.assertEquals(73, elfo.salud());
-
     }
-
 
 }
