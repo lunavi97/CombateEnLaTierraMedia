@@ -3,11 +3,11 @@ package combate;
 public class Orco extends Personaje {
 
     private final int FUERZAINICIAL = 15;
-    
+
     public Orco() {
         fuerza = FUERZAINICIAL;
     }
-    
+
     @Override
     public void vivo_atacar(Personaje otro) {
         otro.sufrirAtaque(fuerza);
@@ -20,8 +20,13 @@ public class Orco extends Personaje {
 
     @Override
     public void vivo_sufrirAtaque(int ataqueRecibido) {
-        vida -= ataqueRecibido / 4;
+        final int golpe = ataqueRecibido / 4;
+        
+        if (vida > golpe)
+            vida -= golpe;
+        else
+            vida = 0;
     }
 
-	
+
 }
