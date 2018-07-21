@@ -12,11 +12,11 @@ public class EnanoTests {
 
 		Assert.assertEquals(100, orco.salud());
 		enano.atacar(orco);
+		Assert.assertEquals(98, orco.salud());
+		enano.atacar(orco);
 		Assert.assertEquals(95, orco.salud());
 		enano.atacar(orco);
-		Assert.assertEquals(88, orco.salud());
-		enano.atacar(orco);
-		Assert.assertEquals(79, orco.salud());
+		Assert.assertEquals(92, orco.salud());
 	}
 
 	@Test

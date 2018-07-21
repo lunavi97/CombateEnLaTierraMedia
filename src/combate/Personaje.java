@@ -2,7 +2,7 @@ package combate;
 
 public abstract class Personaje {
 	
-    private final int VIDAINICIAL = 100;
+    protected final int VIDAINICIAL = 100;
 	protected int fuerza;
 	protected int vida;
 	

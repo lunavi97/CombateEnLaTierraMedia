@@ -2,16 +2,26 @@ package combate;
 
 public class Orco extends Personaje {
 
-	@Override
-	public void atacar(Personaje otro) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	@Override
-	public void descansar() {
-		// TODO Auto-generated method stub
-		
-	}
+    private final int FUERZAINICIAL = 15;
+    
+    public Orco() {
+        fuerza = FUERZAINICIAL;
+    }
+    
+    @Override
+    public void vivo_atacar(Personaje otro) {
+        otro.sufrirAtaque(fuerza);
+    }
+
+    @Override
+    public void vivo_descansar() {
+        // No le sirve de nada
+    }
+
+    @Override
+    public void vivo_sufrirAtaque(int ataqueRecibido) {
+        vida -= ataqueRecibido / 4;
+    }
+
 	
 }
