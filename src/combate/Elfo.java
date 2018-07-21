@@ -21,8 +21,10 @@ public class Elfo extends Personaje {
 
     @Override
     public void vivo_sufrirAtaque(int ataqueRecibido) {
-        if (vida > ataqueRecibido) {
-            vida -= ataqueRecibido;
+        final int golpe = ataqueRecibido;
+        
+        if (vida > golpe) {
+            vida -= golpe;
             fuerza += FUERZAINICIAL;
         }
         else
