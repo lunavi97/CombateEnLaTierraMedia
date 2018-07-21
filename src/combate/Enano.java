@@ -3,11 +3,11 @@ package combate;
 public class Enano extends Personaje {
 
     private final int FUERZAINICIAL = 10;
-    
+
     public Enano() {
         fuerza = FUERZAINICIAL;
     }
-    
+
     @Override
     public void vivo_atacar(Personaje otro) {
         otro.sufrirAtaque(fuerza);
@@ -24,7 +24,12 @@ public class Enano extends Personaje {
 
     @Override
     public void vivo_sufrirAtaque(int ataqueRecibido) {
-        vida -= ataqueRecibido;
+        final int golpe = ataqueRecibido;
+        
+        if (vida > golpe)
+            vida -= golpe;
+        else
+            vida = 0;
     }
-	
+
 }
