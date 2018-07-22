@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Goblin extends Personaje {
 
   private final int FUERZAINICIAL = 3;
-  private final int probabilidadDeSerGolpeado = 1/10;
+  private final double probabilidadDeSerGolpeado = 1.0 / 10.0;
 
   public Goblin() {
     fuerza = FUERZAINICIAL;
@@ -35,7 +35,7 @@ public class Goblin extends Personaje {
 
   private boolean esGolpeado() {
     ThreadLocalRandom random = ThreadLocalRandom.current();
-    return random.nextInt(probabilidadDeSerGolpeado) == 0;
+    return random.nextDouble() < probabilidadDeSerGolpeado;
   }
 
 }
